@@ -1,15 +1,12 @@
 // @flow strict
-interface details{
-    name: string
-}
-type Props = {
-    details:details
-};
+import { useGlobalContext } from "../GlobalContext";
+function Home() {
+    const {username}=useGlobalContext()
 
-function Home(props: Props) {
+
     return (
         <div>
-            <p className='text-base'>{props.details.name}</p>
+            <p className='text-base text-center'>{username}</p>
         </div>
     );
 };
