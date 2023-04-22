@@ -1,12 +1,15 @@
 // @flow strict
-import { useGlobalContext } from "../GlobalContext";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { GlobalContext } from "../GlobalContext";
+
 function Home() {
-    const {username}=useGlobalContext()
-
-
+    const {username,path}=useContext(GlobalContext)
     return (
         <div>
             <p className='text-base text-center'>{username}</p>
+            <Link to={path}>Front</Link>
+
         </div>
     );
 };
