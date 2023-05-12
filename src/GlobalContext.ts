@@ -1,8 +1,5 @@
 import { createContext } from "react"
-export type GlobalContent={
-    name:string,
-    path:string
-}
+import { GlobalContent } from "./types/types"
 
 export const GlobalContext=createContext<GlobalContent>({
     name:"",

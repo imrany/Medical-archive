@@ -5,8 +5,8 @@ import Home from './pages/Home'
 
 function App() {
   const [globalContent,setGlobalContent]=useState({
-    name:"matano",
-    path:"/index"
+    name:"Medical Archive",
+    path:"/"
   })
 
   return (
