@@ -1,5 +1,6 @@
 {
-  "name": "portfolio",
+  "name": "medical-archive",
+  "description":"Medical Archive is a medical platform that containing questions and anwsers that are medical related.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
