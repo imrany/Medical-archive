@@ -4,6 +4,8 @@ import { GlobalContext } from "../GlobalContext";
 import img from "/favicon.png";
 import QnA from "../assets/data/sickness-answer.json";
 import { Link } from "react-router-dom";
+import Select from "react-select";
+import { sortOptions } from "../components/SelectOptions";
 
 function Home() {
     const {name,path}=React.useContext(GlobalContext)
@@ -22,6 +24,18 @@ function Home() {
         });
         setData(result)
     }
+
+    const handleSelect=(val:string)=>{
+        let result:any=[]
+        QnA.forEach(i => {
+            i.tags.forEach(item=>{
+            if(item.includes(val)){
+                result.push(i)
+            }
+            })
+        });
+        setData(result)
+    }
     return (
         <div>
             <header className="flex justify-center my-8">
@@ -32,9 +46,12 @@ function Home() {
             <main>
                 <div id="search" className="flex justify-center mb-10">
                     <input type="search" onChange={handleSearch} placeholder="Search by topic ...e.g addiction" className="border-[1px] border-gray-200 w-[50vw] max-sm:w-[60vw] p-2 rounded-md max-sm:py-1"/>
-                    <select name="" id="sort" className="sm:mx-4 sm:px-4 max-sm:px-2 max-sm:ml-2 rounded-md cursor-pointer bg-transparent border-[1px] border-gray-500" placeholder="Select type">
-                        <option value="1">numbness</option>
-                    </select>
+                    <Select id="sort" 
+                        className="sm:mx-4 max-sm:ml-2" 
+                        placeholder="Select a topic to search"
+                        options={sortOptions}
+                        onChange={(e:any)=>handleSelect(e.value)}
+                    />
                 </div>
 
                 <div className="flex flex-col justify-center items-center">
