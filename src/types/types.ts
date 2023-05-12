@@ -4,5 +4,5 @@ type GlobalContent={
 }
 
 export type{
-    GlobalContent
+    GlobalContent,
 }
