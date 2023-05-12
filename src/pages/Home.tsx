@@ -38,7 +38,7 @@ function Home() {
                 </div>
 
                 <div className="flex flex-col justify-center items-center">
-                    <p className="text-lg font-bold">{data.length} Found</p>
+                    <p className="text-lg font-bold mb-4">{data.length} Found</p>
                     <div className="sm:grid lg:grid-cols-3 md:grid-cols-2 sm:gap-x-[20px] gap-y-[50px] sm:mx-10 mb-20 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:mx-[5vw] max-sm:w-[90vw]">
                         {data&&data.map((i,n)=>(
                             <div className="hover:bg-gray-100 rounded-md" key={n}>
