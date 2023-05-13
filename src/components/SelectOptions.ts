@@ -1,5 +1,9 @@
 const sortOptions=[
     {
+      label:'All topics',
+      value:"all"
+    },
+    {
       label:"addiction",
       value:"addiction"
     },
